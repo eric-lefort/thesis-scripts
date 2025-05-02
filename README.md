@@ -21,30 +21,19 @@ Video → Frame Extraction
 
 ![alt text](RSRD.drawio.svg)
 
-Each stage is modular. Scripts and tools are provided to:
-
-* Preprocess video into images
-* Run SfM and extract camera intrinsics/extrinsics
-* Train the Gaussian splat model
-* Segment and isolate object parts
-* Track articulated parts over time
-* Fit revolute joint axes from motion trajectories
-* Convert splats into watertight meshes
-* Export articulated USD files
-
 ## 📂 Directory Structure
 
 
 ```
 /scripts
-  frame_extraction.py       # Extract frames from video
-  run_colmap.py             # Automates COLMAP pipeline
+  README.md
   train_garfield.py         # Launches GARField + DiG training
   segment_gaussians.py      # Performs 3D segmentation on splats
   run_tracker.py            # Optimizes part trajectories (RSRD)
   extract_joint.py          # Least-squares fitting of revolute joints
   splat_to_mesh.py          # Marching Cubes on splat densities
   export_usd.py             # Assembles articulated mesh + joints
+  build_usd.py              # Builds a USD scene the articulated mesh.
 ```
 
 ## 📎 Requirements
