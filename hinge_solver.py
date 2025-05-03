@@ -397,36 +397,8 @@ if __name__ == "__main__":
     assert axis.shape == (3,)
     assert pivot.shape == (3,)
 
-    # # transformation from initial to final position for part 2
-    # T_init_final = relative_transforms[-1] @ relative_transforms[0].inverse()
-
-
-
-    # # rot = T_init_final.rotation().as_matrix().squeeze()[:3, :3].detach().cpu().numpy()
-    # # trans = T_init_final.translation().detach().cpu().numpy().squeeze()
-    # # # Extract axis and angle
-    # # rot_scipy = R.from_matrix(rot)
-
-    # # axis_angle = rot_scipy.as_rotvec()
-    # # angle = np.linalg.norm(axis_angle)
-    # # axis = axis_angle / angle if angle > 1e-6 else np.array([1, 0, 0])  # default axis
-
-    # # # Solve for pivot point
-    # # A = rot - np.eye(3)
-    # # pivot, residuals, rank, s = np.linalg.lstsq(A, -trans, rcond=None)
-
-    # angle = -torch.acos((torch.trace(T_init_final.rotation().as_matrix().squeeze()) - 1) / 2)
-    
-    # # corresponding axis rotation by theta
-    # T_init_final_axis = tf.SE3.from_matrix(torch.tensor(rotate_about_axis(pivot, axis, float(angle))))
-
-
-    # for every time step, compute new means and quats with optimizer.apply_keyframe,
-    # record means of means and mean of quats in an array
-
-
     # hack: adjustment
-    pivot += np.array([-0.05, -0.05, 0.02])
+    pivot += np.array([0, 0, 0])
 
     # Visualize parts and hinge
     save_parts_and_hinge_html(

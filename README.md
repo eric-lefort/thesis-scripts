@@ -23,7 +23,6 @@ Video → Frame Extraction
 
 ## 📂 Directory Structure
 
-
 ```
 /scripts
   README.md
@@ -38,12 +37,13 @@ Video → Frame Extraction
 
 ## 📎 Requirements
 
-* Python 3.10+
-* COLMAP
-* PyTorch
-* Nerfstudio (with 3DGS/DiG support)
-* NVIDIA Warp (for tracking)
-* Omniverse Kit / IsaacSim (for USD export and validation)
+* rsrd (conda env) [project](https://robot-see-robot-do.github.io)
+  * Python 3.12.8
+  * COLMAP
+  * PyTorch 2.6.0+cu124
+  * Nerfstudio
+  * CUDA 12.4
+* Omniverse IsaacSim (for USD export and validation)
 
 See `requirements.txt` or environment YAML for full dependencies.
 
